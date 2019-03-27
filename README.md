@@ -1,7 +1,6 @@
 # Campaign
 #Test comment
 #New checkin
-
 pragma solidity ^0.4.17;
 contract Campaign {
     struct Request{
@@ -9,11 +8,13 @@ contract Campaign {
         uint value;
         address recipient;
         bool complete;
+        mapping(address=>bool) approvals;
+        uint approvalsCount;
     }
     
     Request[] public requests;
     address public manager;
-    address[] public approvers;
+    mapping(address=>bool) public approvers;
     uint public minimumContribution;
     
     modifier restricted(){
@@ -28,7 +29,7 @@ contract Campaign {
    
    function contribute() public payable{
        require(msg.value >= minimumContribution);
-       approvers.push(msg.sender);
+       approvers[msg.sender] = true;
    }
    
    function createRequest(string description, uint value, address recipient) public restricted{
@@ -36,10 +37,19 @@ contract Campaign {
            description: description,
            value: value,
            recipient: recipient,
-           complete: false
+           complete: false,
+           approvalsCount: 0 
        });
        
        requests.push(request);
    }
+   
+   function approveRequest(uint index) public{
+       Request storage request = requests[index];
+       require(approvers[msg.sender]);
+       require(!request.approvals[msg.sender]);
+       
+       request.approvals[msg.sender] = true;
+       request.approvalsCount++;
+   }
 }
-
