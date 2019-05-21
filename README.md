@@ -1,9 +1,20 @@
 # Campaign
 #Test comment
 #New checkin
-
 pragma solidity ^0.4.17;
 
+contract FactoryCampaign{
+    address[] public campaignAddress;
+    
+    function CreateCampaign(uint minimumContribution) public{
+        address newCampaign = new Campaign(minimumContribution,msg.sender);
+        campaignAddress.push(newCampaign);
+    }
+    
+    function GetCampaigns() public view returns(address[]){
+        return campaignAddress;
+    }
+}
 
 contract Campaign{
     
@@ -27,8 +38,8 @@ contract Campaign{
         _;
     }
 
-    function Campaign(uint minValue) public{
-        manager = msg.sender;
+    function Campaign(uint minValue, address creator) public{
+        manager = creator;
         minimumContribution = minValue;
     }
     
