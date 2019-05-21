@@ -1,0 +1,26 @@
+{
+  "name": "campaign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajannt27/Campaign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajannt27/Campaign/issues"
+  },
+  "homepage": "https://github.com/rajannt27/Campaign#readme",
+  "dependencies": {
+    "fs-extra": "^8.0.1",
+    "ganache-cli": "^6.4.3",
+    "mocha": "^6.1.4",
+    "solc": "^0.5.8",
+    "web3": "^1.0.0-beta.26"
+  }
+}
