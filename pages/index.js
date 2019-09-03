@@ -23,7 +23,10 @@ class CampaignIndex extends Component{
     }
     render() {
         
-        return <div>{this.renderCampaigns()}</div>;
+        return <div>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+        {this.renderCampaigns()}
+        </div>;
     }
 }
 
