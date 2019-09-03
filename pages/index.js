@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import factory from '../Ethereum/factory';
 import {Card} from 'semantic-ui-react';
+import factory from '../Ethereum/factory';
+
 
 class CampaignIndex extends Component{
     static async getInitialProps(){
@@ -9,6 +10,7 @@ class CampaignIndex extends Component{
     }
 
     renderCampaigns(){
+        
         const items = this.props.campaigns.map(address => {
             return{
                 header: address,
@@ -17,7 +19,7 @@ class CampaignIndex extends Component{
             };
         });
 
-        return <Card.Groups items={items}/>;
+        return <Card.Group items={items}/>;
     }
     render() {
         
