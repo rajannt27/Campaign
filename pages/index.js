@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card} from 'semantic-ui-react';
+import {Card, Button} from 'semantic-ui-react';
 import factory from '../Ethereum/factory';
 
 
@@ -26,6 +26,10 @@ class CampaignIndex extends Component{
         return <div>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
         {this.renderCampaigns()}
+        <button class="ui labeled icon button primary">
+            <i class="add circle icon"></i>
+            Create Campaign
+        </button>
         </div>;
     }
 }
