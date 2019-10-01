@@ -5,24 +5,28 @@ import web3 from '../../Ethereum/web3';
 
 class CampaignNew extends Component{
     state = {
-        minimumContribution: ''
+        minimumContribution: '',
+        errorMessage:''
     };
     onSubmit = async (event) => {
         event.preventDefault();
-        const accounts = await web3.eth.getAccounts();
-        console.log("test west"+accounts[0]+" "+this.state.minimumContribution);
-        this.state.accounts = accounts;
-        await instance.methods.CreateCampaign(this.state.minimumContribution)
-        .send({
-            from: accounts[0]
-        });
+        try{
+            const accounts = await web3.eth.getAccounts();
+            await instance.methods.CreateCampaign(this.state.minimumContribution)
+            .send({
+                from: accounts[0]
+            });
+        }
+        catch(err){
+            this.setState({errorMessage: err.message});
+        }
     };
 
     render(){
         return (
             <Layout>
                 <h3>Create a campaign</h3>
-                <form class="ui form" onSubmit={this.onSubmit}>
+                <form class="ui form error" onSubmit={this.onSubmit} >
                     <div class="field">
                         <label>Minimum Contribution</label>
                         <div class="ui right labeled input">
@@ -37,6 +41,15 @@ class CampaignNew extends Component{
                                 wei
                             </div>
                         </div>
+                    </div>
+                    <div class="ui error message">
+                        <i class="close icon"></i>
+                        <div class="header">
+                            Oops!
+                        </div>
+                        <ul class="list">
+                            <li>{this.state.errorMessage}</li>
+                        </ul>
                     </div>
                     <button class="ui button primary" type="submit">Create</button>
                 </form>
