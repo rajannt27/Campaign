@@ -10,7 +10,7 @@ class CampaignNew extends Component{
     onSubmit = async (event) => {
         event.preventDefault();
         const accounts = await web3.eth.getAccounts();
-        console.log("test",accounts);
+        console.log("test west"+accounts[0]+" "+this.state.minimumContribution);
         this.state.accounts = accounts;
         await instance.methods.CreateCampaign(this.state.minimumContribution)
         .send({
