@@ -7,10 +7,13 @@ import {Form, Button, Input, Message} from 'semantic-ui-react'
 class CampaignNew extends Component{
     state = {
         minimumContribution: '',
-        errorMessage:''
+        errorMessage:'',
+        loading : false
     };
     onSubmit = async (event) => {
         event.preventDefault();
+        await ethereum.enable();
+        this.setState({ loading : true, errorMessage: '' });
         try{
             const accounts = await web3.eth.getAccounts();
             await instance.methods.CreateCampaign(this.state.minimumContribution)
@@ -21,13 +24,14 @@ class CampaignNew extends Component{
         catch(err){
             this.setState({errorMessage: err.message});
         }
+        this.setState({ loading : false });
     };
 
     render(){
         return (
             <Layout>
                 <h3>Create a campaign</h3>
-                <Form error={this.state.errorMessage} onSubmit={this.onSubmit} >
+                <Form error={!!this.state.errorMessage} onSubmit={this.onSubmit} >
                     <Form.Field>
                         <label>Minimum Contribution</label>
                         <Input 
@@ -38,7 +42,7 @@ class CampaignNew extends Component{
                         />
                     </Form.Field>
                     <Message error header="Oops!" content={this.state.errorMessage} />
-                    <Button primary>Create</Button>
+                    <Button primary loading = {this.state.loading}>Create</Button>
                 </Form>
             </Layout>
         );
