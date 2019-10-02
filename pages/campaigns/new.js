@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Layout from '../../components/layout';
 import instance from '../../Ethereum/factory';
 import web3 from '../../Ethereum/web3';
+import {Form, Button, Input, Message} from 'semantic-ui-react'
 
 class CampaignNew extends Component{
     state = {
@@ -26,33 +27,19 @@ class CampaignNew extends Component{
         return (
             <Layout>
                 <h3>Create a campaign</h3>
-                <form class="ui form error" onSubmit={this.onSubmit} >
-                    <div class="field">
+                <Form error={this.state.errorMessage} onSubmit={this.onSubmit} >
+                    <Form.Field>
                         <label>Minimum Contribution</label>
-                        <div class="ui right labeled input">
-                            <input 
-                                type="text" 
-                                name="minimum-contribution" 
-                                placeholder="Minimum Contribution"
-                                value={this.state.minimumContribution}
-                                onChange={event => this.setState({minimumContribution: event.target.value})}
-                            />
-                            <div class="ui label">
-                                wei
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui error message">
-                        <i class="close icon"></i>
-                        <div class="header">
-                            Oops!
-                        </div>
-                        <ul class="list">
-                            <li>{this.state.errorMessage}</li>
-                        </ul>
-                    </div>
-                    <button class="ui button primary" type="submit">Create</button>
-                </form>
+                        <Input 
+                            label="wei"
+                            labelPosition="right"
+                            value={this.state.minimumContribution}
+                            onChange={event => this.setState({minimumContribution: event.target.value})}
+                        />
+                    </Form.Field>
+                    <Message error header="Oops!" content={this.state.errorMessage} />
+                    <Button primary>Create</Button>
+                </Form>
             </Layout>
         );
     }
