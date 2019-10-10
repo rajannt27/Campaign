@@ -20,11 +20,7 @@ var _head2 = _interopRequireDefault(_head);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-<<<<<<< HEAD
 var _jsxFileName = 'D:\\Learn\\Blockchain\\Campaign\\components\\layout.js';
-=======
-var _jsxFileName = 'e:\\Learn\\Blockchain\\Campaign\\components\\layout.js';
->>>>>>> acce2ea9f6dbf394592c3067f15a29b5b539164e
 
 exports.default = function (props) {
     return _react2.default.createElement(_semanticUiReact.Container, {
@@ -48,8 +44,4 @@ exports.default = function (props) {
         }
     }), props.children);
 };
-<<<<<<< HEAD
 //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHNcXGxheW91dC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkhlYWRlciIsIkNvbnRhaW5lciIsIkhlYWQiLCJwcm9wcyIsImNoaWxkcmVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxBQUFPOzs7O0FBQ1AsQUFBTyxBQUFZOzs7O0FBQ25CLEFBQVE7O0FBQ1IsQUFBTyxBQUVQOzs7Ozs7OztrQkFBYyxVQUFBLEFBQUMsT0FBVSxBQUNyQjsyQkFDSSxBQUFDOztzQkFBRDt3QkFBQSxBQUNJO0FBREo7QUFBQSxLQUFBLGtCQUNJLEFBQUM7O3NCQUFEO3dCQUFBLEFBQ0k7QUFESjtBQUFBLCtDQUNVLEtBQU4sQUFBVSxjQUFhLE1BQXZCLEFBQTRCO3NCQUE1Qjt3QkFGUixBQUNJLEFBQ0ksQUFFSjtBQUZJO3lCQUVKLEFBQUM7O3NCQUFEO3dCQUpKLEFBSUksQUFDQztBQUREO0FBQUEsY0FMUixBQUNJLEFBS1csQUFHbEI7QUFWRCIsImZpbGUiOiJsYXlvdXQuanMiLCJzb3VyY2VSb290IjoiRDovTGVhcm4vQmxvY2tjaGFpbi9DYW1wYWlnbiJ9
-=======
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHNcXGxheW91dC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkhlYWRlciIsIkNvbnRhaW5lciIsIkhlYWQiLCJwcm9wcyIsImNoaWxkcmVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQSxBQUFPOzs7O0FBQ1AsQUFBTyxBQUFZOzs7O0FBQ25CLEFBQVE7O0FBQ1IsQUFBTyxBQUVQOzs7Ozs7OztrQkFBYyxVQUFBLEFBQUMsT0FBVSxBQUNyQjsyQkFDSSxBQUFDOztzQkFBRDt3QkFBQSxBQUNJO0FBREo7QUFBQSxLQUFBLGtCQUNJLEFBQUM7O3NCQUFEO3dCQUFBLEFBQ0k7QUFESjtBQUFBLCtDQUNVLEtBQU4sQUFBVSxjQUFhLE1BQXZCLEFBQTRCO3NCQUE1Qjt3QkFGUixBQUNJLEFBQ0ksQUFFSjtBQUZJO3lCQUVKLEFBQUM7O3NCQUFEO3dCQUpKLEFBSUksQUFDQztBQUREO0FBQUEsY0FMUixBQUNJLEFBS1csQUFHbEI7QUFWRCIsImZpbGUiOiJsYXlvdXQuanMiLCJzb3VyY2VSb290IjoiZTovTGVhcm4vQmxvY2tjaGFpbi9DYW1wYWlnbiJ9
->>>>>>> acce2ea9f6dbf394592c3067f15a29b5b539164e

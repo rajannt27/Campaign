@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import Layout from '../../components/layout';
 import Campaign from '../../Ethereum/campaign';
-import {Card, Grid} from 'semantic-ui-react';
+import {Card, Grid, Button} from 'semantic-ui-react';
 import web3 from '../../Ethereum/web3';
 import ContributeForm from '../../components/contribute';
+import {Link} from '../../routes';
 
 class CampaignShow extends Component{
     static async getInitialProps(props){
@@ -24,12 +25,23 @@ class CampaignShow extends Component{
             <Layout>
                 <h3>Campaign Details {this.props.manager}</h3>
                 <Grid>
-                    <Grid.Column width={10}>
-                        {this.renderCards()}
-                    </Grid.Column>
-                    <Grid.Column width={6}>
-                        <ContributeForm address={this.props.address}></ContributeForm>
-                    </Grid.Column>
+                    <Grid.Row>
+                        <Grid.Column width={10}>
+                            {this.renderCards()}
+                        </Grid.Column>
+                        <Grid.Column width={6}>
+                            <ContributeForm address={this.props.address}></ContributeForm>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Link route={`/campaigns/${this.props.address}/requests`}>
+                                <a>
+                                    <Button primary>View Request</Button>
+                                </a>
+                            </Link>
+                        </Grid.Column>
+                    </Grid.Row>
                 </Grid>
             </Layout>
         );
